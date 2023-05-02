@@ -160,7 +160,7 @@ header .nav__links li a {
 .training__content {
     display: flex;
     flex-direction: column;
-            margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 .training__content__item {
@@ -337,7 +337,16 @@ grid-template-columns: auto 1fr;
 
     /* TRAINING SCHEDULE */
 
-   
+   .section__training {
+       padding: 1rem;
+   }
+
+ .training__content__item {
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+ }
+
+}
   
 
   

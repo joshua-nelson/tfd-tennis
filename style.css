@@ -9,13 +9,30 @@
     font-family: 'Fjalla One', sans-serif;
 }
 
+hr {
+    border: 1px solid #a60304;
+    width: 100%;
+    margin-bottom: .8rem;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 100;
+    line-height: 1.5rem;
+    margin-bottom: 1rem;
+}
+
 .emphasized {
     color: var(--main-font-color);
 }
 
 
 header {
-    background-color: #fff;
     padding: 1rem;
     display: flex;
     justify-content: space-between;
@@ -35,8 +52,8 @@ header .logo {
 }
 
 header .logo img{
-    width: 150px;
-    height: 150px;
+    max-width: 150px;
+   
 }
 
 header .nav__links {
@@ -58,7 +75,7 @@ header .nav__links li a {
 }
 
 .section__hero {
-    background-image: url(./img/hero.jpg);
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(./img/hero.jpg);
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -82,7 +99,6 @@ header .nav__links li a {
 
 .about-us {
     padding: 4rem;
-    height: 100vh;
     display: grid;
     grid-template-columns: 1fr 2fr;
 
@@ -97,10 +113,235 @@ header .nav__links li a {
     padding: 50px;
 }
 
-.section__about-us p {
-    font-size: 1.2rem;
-    font-weight: 100;
-    line-height: 2.5rem;
+.about-us__content h2 {
     color: var(--main-font-color);
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
+}
+
+.section__coaches {
+
+    padding: 4rem;
+}
+.coach h3 {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.coaches h3 {
+    margin-bottom: 1rem;
+}
+
+.coach img {
+    max-width: 100%;
+}
+
+.coach .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+
+.coaches__content .coach {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+}
+
+.section__training {
+    padding: 4rem;
+}
+
+.training__schedule h2 {
+    margin-bottom: 1rem;
+}
+
+.training__content {
+    display: flex;
+    flex-direction: column;
+            margin-bottom: 1rem;
+}
+
+.training__content__item {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+
+}
+
+.training__content__item h3 {
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+
+}
+
+.training__content__item .date {
+background-color: var(--main-font-color); 
+display: flex;
+flex-direction: column;
+justify-content: center;
+text-align: center;
+}
+
+.training__content__item .date p {
+color: #fff;
+font-size: 1.5rem;
+font-weight: 700;
+}
+
+.training__content__item .info {
+padding: 1rem;
+}
+
+.training__content__item .info .description {
+margin-bottom: 1rem;
+color: rgb(75, 75, 75);
+font-style: italic;
+}
+
+.training__content__item .icon {
+width: 30px;
+}
+
+.training__group .time, .age {
+display: grid;
+grid-template-columns: auto 1fr;
+}
+
+.training__group .time .icon, .age .icon {
+ margin-right: 1rem;
+}
+
+ /* CONTACT */
+
+ .section__contact {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.contact {
+    width: 75%;
+}
+
+.contact button {
+    width: 10rem;
+}
+.contact__form {
+   border-radius: 1rem;
+   padding: 1rem;
+}
+
+.contact__form .form__group {
+   margin-bottom: 1rem;
+   display: flex;
+   flex-direction: column;
+}
+
+.contact__form .form__group label {
+   margin-bottom: .5rem;
+}
+
+.contact__form .form__group input, textarea, button {
+   border: none;
+   outline: none;
+   padding: .5rem;
+   border-radius: .3rem;
+}
+
+ /* FOOTER */
+
+ footer {
+    padding: 1rem;
+    border-top: 2px solid rgba(0,0,0,0.1);
+}
+
+.footer__content {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    header nav {
+        display: none;
+    }
+
+    header .hamburger {
+        background: url(./img/menu.svg) no-repeat center;
+        height: 50px;
+        width: 50px;
+    }
+
+    .hero {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 10rem;
+    }
+
+    .logo p {
+        display: none;
+    }
+
+    .hero__content h1 {
+        font-size: 2rem;
+        padding: 0;
+    }
+
+    .section__about-us {
+        margin-top: 1rem;
+    }
+
+    .about-us {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+   .about-us__image {
+        display: none;
+   }
+
+    .about-us__content {
+        padding: 0;
+    }
+
+    /* COACHES */
+
+    .section__coaches {
+        padding: 1rem;
+    }
+
+    .coach img {
+        max-width: 100%;
+    }
+    
+    .coach .image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 1rem;
+    }
+    
+    
+    .coaches__content .coach {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+
+    /* TRAINING SCHEDULE */
+
+   
+  
+
+  
+
+   
+
 }

@@ -1,5 +1,6 @@
 :root {
     --main-font-color: #a60304;
+    --secondary-color: #009bfb;
 }
 
 * {
@@ -10,7 +11,7 @@
 }
 
 hr {
-    border: 1px solid #a60304;
+    border: 1px solid #C2005B;
     width: 100%;
     margin-bottom: .8rem;
 }
@@ -28,7 +29,7 @@ p {
 }
 
 .emphasized {
-    color: var(--main-font-color);
+    color: #ab2222;
 }
 
 
@@ -97,11 +98,15 @@ header .nav__links li a {
     margin-right: 5rem;
 }
 
+.section__about-us {
+    background: url(./img/layed-waves.svg) no-repeat bottom/cover;
+}
+
 .about-us {
     padding: 4rem;
     display: grid;
     grid-template-columns: 1fr 2fr;
-
+    
 }
 
 .about-us__image {
@@ -116,17 +121,48 @@ header .nav__links li a {
 }
 
 .about-us__content {
-    padding: 50px;
+    padding: 2rem;
+    background: transparent;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0px -6px 21px -19px var(--secondary-color);
+
 }
 
+.about-us__content p {
+    font-size: 1.4rem;
+    line-height: 2rem;
+}
+
+
 .about-us__content h2 {
-    color: var(--main-font-color);
     margin-bottom: 1rem;
 }
 
-.section__coaches {
+.top-wave {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
 
+.top-wave img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.section__coaches {
+    background-color: #009bfb;
     padding: 4rem;
+}
+
+.coaches__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    margin-bottom: 1rem;
 }
 .coach h3 {
     text-align: center;
@@ -150,13 +186,25 @@ header .nav__links li a {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 1rem;
+    height: 200px;
+    overflow: hidden;
+}
+
+.coach {
+    box-shadow: 12px 15px 15px rgba(0,0,0,0.2);
+    background-color: #f0f0f0;
+    padding: 1rem;
+    border-radius: 15px;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
 .coaches__content .coach {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -176,7 +224,6 @@ header .nav__links li a {
 }
 
 .training__content__item {
-    margin-top: 1rem;
     display: grid;
     margin: 1rem;
     grid-template-columns: 2fr 4fr;
@@ -191,7 +238,7 @@ header .nav__links li a {
 }
 
 .training__content__item .date {
-background-color: var(--main-font-color); 
+background-color: #6475E7; 
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -233,11 +280,14 @@ grid-template-columns: auto 1fr;
     display: flex;
     justify-content: center;
     padding: 1rem;
-    background-color: rgb(3,166,165, 0.1);
+    background: url('./img/layered-peaks.svg') no-repeat bottom/cover;
 }
 
 .contact {
     width: 65%;
+    padding: 1rem;
+    border-radius: 2rem;
+    background-color: #c2005b7f;
 }
 
 .contact button {
@@ -271,7 +321,7 @@ grid-template-columns: auto 1fr;
 
  footer {
     padding: 1rem;
-    border-top: 2px solid rgba(0,0,0,0.1);
+    background-color: #00b6e8;
 }
 
 .footer__content {
@@ -279,9 +329,48 @@ grid-template-columns: auto 1fr;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+
 }
 
+.wave {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
 
+.wave svg {
+    position: relative;
+    display: block;
+    width: calc(119% + 1.3px);
+    height: 173px;
+}
+
+.wave .shape-fill {
+    fill: #009BFB;
+}
+
+.wave1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.wave1 svg {
+    position: relative;
+    display: block;
+    width: calc(184% + 1.3px);
+    height: 95px;
+}
+
+.wave1 .shape-fill {
+    fill: red;
+}
 
 @media screen and (max-width: 768px) {
 
@@ -296,19 +385,27 @@ grid-template-columns: auto 1fr;
     }
 
     .hero {
+        display: flex;
         flex-direction: column;
         justify-content: center;
-        text-align: center;
-        margin-bottom: 10rem;
+        align-items: center;
+
+    }
+
+    .hero__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero__content h1 {
+        margin: 0;
+        font-size: 2rem;
     }
 
     .logo p {
         display: none;
-    }
-
-    .hero__content h1 {
-        font-size: 2rem;
-        padding: 0;
     }
 
     .section__about-us {
@@ -325,13 +422,20 @@ grid-template-columns: auto 1fr;
    }
 
     .about-us__content {
-        padding: 0;
+        padding: 1rem;
+        background-color: #54d689;
     }
+
+    .about-us__content p {
+        font-size: 1rem;
+    }
+
 
     /* COACHES */
 
     .section__coaches {
         padding: 1rem;
+
     }
 
     .coach img {
@@ -345,6 +449,10 @@ grid-template-columns: auto 1fr;
         margin-right: 1rem;
     }
     
+    .coaches__content {
+        display: flex;
+        flex-direction: column;
+    }
     
     .coaches__content .coach {
         display: flex;
@@ -366,8 +474,12 @@ grid-template-columns: auto 1fr;
  .training__content__item {
     display: grid;
     grid-template-columns: 2fr 4fr;
+
  }
 
+ .contact {
+    width: 100%;
+ }
 
 
  .footer__content {
